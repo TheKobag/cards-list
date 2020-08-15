@@ -1,0 +1,12 @@
+<mat-card>
+	<img 
+    [src]="data.photo" 
+    [alt]="'image#' + data.id" 
+    width="500px" 
+    height="500px" 
+    loading="lazy" 
+    onerror="this.src='https://image.shutterstock.com/image-vector/404-error-file-not-found-600w-206508901.jpg'" >
+	<mat-card-content>
+		<p> {{data.text}} </p>
+	</mat-card-content>
+</mat-card>

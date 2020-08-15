@@ -1,0 +1,22 @@
+export enum Texts {
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+  "Phasellus sodales a tempor tincidunt",
+  "A pharetra suscipit quis tristique malesuada blandit cras sapien convallis fermentum",
+  "Duis interdum ut justo integer ligula",
+  "Eget laoreet sapien elementum aenean urna magna etiam",
+  "Posuere placerat per tellus aliquam donec pulvinar sed",
+  "Velit leo consectetur nulla integer potenti",
+  "Pharetra ut euismod leo amet in purus aenean vivamus a",
+  "Lacus accumsan habitant condimentum duis morbi pretium convallis libero donec blandit elementum integer",
+  "Venenatis aliquet vehicula malesuada vitae",
+  "Fermentum dapibus mi eget viverra laoreet orci donec risus venenatis eget consectetur sagittis",
+  "Venenatis hac etiam proin quisque leo molestie vivamus lorem tellus nam himenaeos",
+  "Per quisque ipsum cubilia etiam sapien ipsum mauris ipsum eleifend habitant cursus libero",
+  "Mollis etiam non etiam nulla risus nec metus",
+  "Pellentesque feugiat bibendum netus nulla senectus cras duis ac dolor conubia hendrerit",
+  "Etiam cras nec iaculis leo in etiam ante",
+  "Quisque nibh molestie nullam nam nunc diam morbi sem ornare",
+  "Sem a pellentesque suspendisse pharetra vehicula tellus vehicula aliquam scelerisque sit cras at",
+  "Imperdiet semper eu pharetra lorem orci sem ad nullam velit justo feugiat accumsan",
+  "Venenatis eget est suspendisse sagittis aptent eleifend"
+}

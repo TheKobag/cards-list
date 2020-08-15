@@ -1,0 +1,12 @@
+<!-- Menu Bar -->
+<app-filter-bar 
+  [searchFields]="searchFields"
+  (filterParams)="handleFilter($event)">
+</app-filter-bar>
+
+<!-- Scrollable List -->
+<cdk-virtual-scroll-viewport style="height: 100%;" itemSize="583">
+	<ng-container *cdkVirtualFor="let card of cards | filterByPropertyAndValue: searchField: searchText">
+		<app-card [data]="card"></app-card>
+	</ng-container>
+</cdk-virtual-scroll-viewport>

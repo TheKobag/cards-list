@@ -1,0 +1,13 @@
+mat-card{
+  display: flex;
+  width: 1000px;
+  margin: 10px;
+  img {
+    min-width: 500px;
+  }
+  mat-card-content {
+    padding: 5px 15px;
+    font-size: 25px;
+    line-height: normal;
+  }
+}

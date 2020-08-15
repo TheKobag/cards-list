@@ -1,0 +1,7 @@
+mat-toolbar {
+  height: auto;
+  padding-top: 25px;
+  & > * {
+    margin-right: 10px;
+  }
+}
