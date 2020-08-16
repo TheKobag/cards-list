@@ -11,6 +11,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSelectModule } from "@angular/material/select";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
+import { MatTabsModule } from "@angular/material/tabs";
 
 // Components
 import { CardComponent } from "./components/card/card.component";
@@ -39,14 +40,16 @@ import { FilterByPropertyAndValuePipe } from "./pipes/filter.pipe";
     MatInputModule,
     MatIconModule,
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTabsModule,
   ],
   exports: [
     CardComponent,
     InputTextComponent,
     InputSelectComponent,
     FilterBarComponent,
-    FilterByPropertyAndValuePipe
+    FilterByPropertyAndValuePipe,
+    MatTabsModule
   ]
 })
 export class SharedModule {}
