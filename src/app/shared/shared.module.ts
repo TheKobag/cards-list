@@ -44,12 +44,21 @@ import { FilterByPropertyAndValuePipe } from "./pipes/filter.pipe";
     MatTabsModule,
   ],
   exports: [
+    MatCardModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatTabsModule,
+
     CardComponent,
     InputTextComponent,
     InputSelectComponent,
     FilterBarComponent,
+
     FilterByPropertyAndValuePipe,
-    MatTabsModule
   ]
 })
 export class SharedModule {}

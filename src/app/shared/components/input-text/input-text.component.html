@@ -1,7 +1,7 @@
 <!-- Input Field -->
 <mat-form-field appearance="outline">
 	<mat-label> {{ inputHeader }} </mat-label>
-	<input matInput type="text" [(ngModel)]="value" [disabled]="!isEnabled" (keyup)="valueChanged(value)">
+	<input id="input" matInput type="text" [(ngModel)]="value" [disabled]="!isEnabled" (keyup)="valueChanged(value)">
 	<button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="resetValue()">
     <mat-icon>close</mat-icon>
   </button>

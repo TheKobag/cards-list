@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
 import { Card } from '../../../models/element.model';
 
 @Component({

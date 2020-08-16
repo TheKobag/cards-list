@@ -11,14 +11,26 @@ export class InputSelectComponent implements OnInit {
   @Input() options: KeyValue[];
   @Output() selectedField: EventEmitter<string> = new EventEmitter<string>();
 
-  value: string;
+  value: string = '';
 
   constructor() {}
 
   ngOnInit() {}
 
-  // Emits the value selected
-  valueChanged(value) {
+  /**
+   * Emits the option selected
+   * @param value new value
+   */
+  valueChanged(value: string) {
+    this._emitValue(value);
+  }
+
+  /**
+   * Emits the new value for the input
+   * @param value new value
+   * @emits returns new value for input text
+   */
+  private _emitValue(value: string) {
     this.selectedField.emit(value);
   }
 }

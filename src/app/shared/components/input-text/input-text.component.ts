@@ -1,29 +1,41 @@
-import { Component, OnInit, Input, Output, EventEmitter, SimpleChanges } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: "app-input-text",
-  templateUrl: "./input-text.component.html",
-  styleUrls: ["./input-text.component.scss"]
+  selector: 'app-input-text',
+  templateUrl: './input-text.component.html',
+  styleUrls: ['./input-text.component.scss'],
 })
 export class InputTextComponent implements OnInit {
-  @Input() isEnabled: boolean;
-  @Input() inputHeader: string;
+  @Input() isEnabled: boolean = false;
+  @Input() inputHeader: string = "";
   @Output() inputValue: EventEmitter<string> = new EventEmitter<string>();
 
-  value: string;
+  value: string = '';
 
   constructor() {}
 
   ngOnInit() {}
 
-  // Emits the value typed
+  /**
+   * Emits the value typed
+   */
   valueChanged(value) {
-    this.inputValue.emit(value);
+    this._emitValue(value);
   }
 
-  // Empties the input and emits the new value
+  /**
+   * Empties the input and emits the new value
+   */
   resetValue() {
     this.value = '';
-    this.inputValue.emit('');
+    this._emitValue('');
+  }
+
+  /**
+   * Emits the new value for the input
+   * @emits returns new value for input text
+   */
+  private _emitValue(value) {
+    this.inputValue.emit(value);
   }
 }

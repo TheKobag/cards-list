@@ -1,22 +1,24 @@
 <mat-tab-group mat-align-tabs="start">
+  <mat-tab label="Dashboard">
 
-	<mat-tab label="Dashboard">
+    <!-- Menu Bar -->
+    <app-filter-bar
+      [searchFields]="searchFields"
+      (filterParams)="handleFilter($event)"
+    >
+    </app-filter-bar>
 
-		<!-- Menu Bar -->
-		<app-filter-bar [searchFields]="searchFields" (filterParams)="handleFilter($event)">
-		</app-filter-bar>
+    <!-- Scrollable List -->
+    <cdk-virtual-scroll-viewport itemSize="542">
+      <ng-container
+        #containerList
+        *cdkVirtualFor="let card of cards | filterByPropertyAndValue: searchField: searchText; templateCacheSize: 0"
+      >
+        <app-card [data]="card" *ngIf="virtualScroll.getDataLength() > 0"></app-card>
+      </ng-container>
 
-		<!-- Scrollable List -->
-		<cdk-virtual-scroll-viewport itemSize="583">
-
-			<ng-container *cdkVirtualFor="let card of cards | filterByPropertyAndValue: searchField: searchText">
-
-				<app-card [data]="card"></app-card>
-
-			</ng-container>
-
-		</cdk-virtual-scroll-viewport>
-
-	</mat-tab>
-
+      <!-- No result template -->
+      <mat-card *ngIf="undefined != virtualScroll && virtualScroll.getDataLength() == 0">No result found</mat-card>
+    </cdk-virtual-scroll-viewport>
+  </mat-tab>
 </mat-tab-group>
