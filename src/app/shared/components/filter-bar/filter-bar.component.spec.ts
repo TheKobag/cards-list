@@ -1,14 +1,14 @@
-import { TestBed, async } from '@angular/core/testing';
-import { FilterBarComponent } from './filter-bar.component';
+import { async, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSelectModule } from '@angular/material/select';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { InputSelectComponent } from '../input-select/input-Select.component';
 import { InputTextComponent } from '../input-text/input-text.component';
-import { MatInputModule } from '@angular/material/input';
+import { FilterBarComponent } from './filter-bar.component';
 
 describe('FilterBarComponent', () => {
   beforeEach(async(() => {

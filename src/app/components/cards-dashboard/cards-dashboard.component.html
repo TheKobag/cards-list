@@ -11,7 +11,6 @@
     <!-- Scrollable List -->
     <cdk-virtual-scroll-viewport itemSize="542">
       <ng-container
-        #containerList
         *cdkVirtualFor="let card of cards | filterByPropertyAndValue: searchField: searchText; templateCacheSize: 0"
       >
         <app-card [data]="card" *ngIf="virtualScroll.getDataLength() > 0"></app-card>
@@ -19,6 +18,7 @@
 
       <!-- No result template -->
       <mat-card *ngIf="undefined != virtualScroll && virtualScroll.getDataLength() == 0">No result found</mat-card>
+
     </cdk-virtual-scroll-viewport>
   </mat-tab>
 </mat-tab-group>

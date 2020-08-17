@@ -1,28 +1,24 @@
-import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
-import { KeyValue } from "../../../models/key-value.model";
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { KeyValue } from '../../../models/key-value.model';
 
 @Component({
-  selector: "app-input-select",
-  templateUrl: "./input-select.component.html",
-  styleUrls: ["./input-select.component.scss"]
+  selector: 'app-input-select',
+  templateUrl: './input-select.component.html',
+  styleUrls: ['./input-select.component.scss']
 })
-export class InputSelectComponent implements OnInit {
+export class InputSelectComponent {
   @Input() inputHeader: string;
   @Input() options: KeyValue[];
   @Output() selectedField: EventEmitter<string> = new EventEmitter<string>();
 
-  value: string = '';
-
-  constructor() {}
-
-  ngOnInit() {}
+  value = '';
 
   /**
    * Emits the option selected
    * @param value new value
    */
   valueChanged(value: string) {
-    this._emitValue(value);
+    this.emitValue(value);
   }
 
   /**
@@ -30,7 +26,7 @@ export class InputSelectComponent implements OnInit {
    * @param value new value
    * @emits returns new value for input text
    */
-  private _emitValue(value: string) {
+  private emitValue(value: string) {
     this.selectedField.emit(value);
   }
 }

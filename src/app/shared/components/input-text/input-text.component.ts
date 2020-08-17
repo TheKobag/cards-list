@@ -1,26 +1,22 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-text',
   templateUrl: './input-text.component.html',
   styleUrls: ['./input-text.component.scss'],
 })
-export class InputTextComponent implements OnInit {
-  @Input() isEnabled: boolean = false;
-  @Input() inputHeader: string = "";
+export class InputTextComponent {
+  @Input() isEnabled = false;
+  @Input() inputHeader = '';
   @Output() inputValue: EventEmitter<string> = new EventEmitter<string>();
 
-  value: string = '';
-
-  constructor() {}
-
-  ngOnInit() {}
+  value = '';
 
   /**
    * Emits the value typed
    */
-  valueChanged(value) {
-    this._emitValue(value);
+  valueChanged(value: string) {
+    this.emitValue(value);
   }
 
   /**
@@ -28,14 +24,14 @@ export class InputTextComponent implements OnInit {
    */
   resetValue() {
     this.value = '';
-    this._emitValue('');
+    this.emitValue('');
   }
 
   /**
    * Emits the new value for the input
    * @emits returns new value for input text
    */
-  private _emitValue(value) {
+  private emitValue(value: string) {
     this.inputValue.emit(value);
   }
 }

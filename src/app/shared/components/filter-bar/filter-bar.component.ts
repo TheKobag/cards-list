@@ -1,15 +1,14 @@
-import { Component, OnInit, Input, Output, EventEmitter, ViewChild } from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { FilterFileds } from "../../../models/filter-fileds.model";
-import { KeyValue } from "../../../models/key-value.model";
-import { InputTextComponent } from "../input-text/input-text.component";
+import { Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { FilterFileds } from '../../../models/filter-fileds.model';
+import { KeyValue } from '../../../models/key-value.model';
+import { InputTextComponent } from '../input-text/input-text.component';
 
 @Component({
-  selector: "app-filter-bar",
-  templateUrl: "./filter-bar.component.html",
-  styleUrls: ["./filter-bar.component.scss"]
+  selector: 'app-filter-bar',
+  templateUrl: './filter-bar.component.html',
+  styleUrls: ['./filter-bar.component.scss']
 })
-export class FilterBarComponent implements OnInit {
+export class FilterBarComponent {
   // Options for Select Input
   @Input() searchFields: KeyValue[];
 
@@ -19,14 +18,8 @@ export class FilterBarComponent implements OnInit {
   // Accesses to InputTextComponent child
   @ViewChild(InputTextComponent) inputText: InputTextComponent;
 
-  // Vbles to store data
-  searchText: string = '';
-  searchField: string = '';
-
-  constructor() {}
-
-  ngOnInit() {
-  }
+  searchText = '';
+  searchField = '';
 
   // Manages ComboBox selection
   fieldSelected(selectedField: string) {
@@ -39,7 +32,7 @@ export class FilterBarComponent implements OnInit {
   // Assigns typed field from text input
   onInputChanged(inputValue: string) {
     this.searchText = inputValue;
-    this._emitValue( this.searchField, this.searchText);
+    this.emitValue( this.searchField, this.searchText);
   }
 
   /**
@@ -48,7 +41,7 @@ export class FilterBarComponent implements OnInit {
    * @param searchText new text
    * @emits returns new value for filtering
    */
-  private _emitValue(searchField: string, searchText: string) {
+  private emitValue(searchField: string, searchText: string) {
     this.filterParams.emit({ field: searchField, text: searchText });
   }
 }

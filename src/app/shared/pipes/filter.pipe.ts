@@ -18,8 +18,11 @@ export class FilterByPropertyAndValuePipe implements PipeTransform {
       return items;
     }
     searchText = searchText.toLocaleLowerCase();
-    return items.filter(it => {
-      return it[searchField].toString().toLocaleLowerCase().includes(searchText);
+    return items.filter((it) => {
+      return it[searchField]
+        .toString()
+        .toLocaleLowerCase()
+        .includes(searchText);
     });
   }
 }

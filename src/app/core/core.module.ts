@@ -1,7 +1,10 @@
 import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { CardsService } from './services/cards.service';
 
 @NgModule({
-  providers: []
+  providers: [
+    CardsService
+  ]
 })
 export class CoreModule {
   constructor(@Optional() @SkipSelf() parentModule: CoreModule) {
