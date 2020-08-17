@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
-import { Card } from 'src/app/models/element.model';
-import { Texts } from 'src/assets/data/text.enum';
+import { Card } from './../../models/element.model';
+import { Texts } from './../../../assets/data/text.enum';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CardsService {
   private cardsSubject = new BehaviorSubject<Card[]>([]);
@@ -13,6 +13,7 @@ export class CardsService {
   // Should call a service and fetch data from an API endpoint
   getData(): Observable<Card[]> {
     this.cardsSubject.next(this.generateData());
+
     return this.cardsSubject.asObservable();
   }
 
@@ -22,10 +23,11 @@ export class CardsService {
       const card = {
         id,
         photoUrl: this.generateImage(id),
-        text: this.generateParagraph()
+        text: this.generateParagraph(),
       };
       elements.push(card);
     }
+
     return elements;
   }
 

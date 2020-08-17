@@ -1,6 +1,6 @@
 import { CdkVirtualScrollViewport } from '@angular/cdk/scrolling';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CardsService } from 'src/app/core/services/cards.service';
+import { CardsService } from './../../core/services/cards.service';
 import { Card } from '../../models/element.model';
 import { KeyValue } from '../../models/key-value.model';
 
